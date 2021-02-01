@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+<p>
+    <a href="{% url 'wikipedia:edit' title %}">
+        <input class="btn btn-primary" type="button" value="Edit">  </a>
+        <span style="display: flex;justify-content: center;align-items: center;">
+        <audio controls>
+        <source src={{file.url}} type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        </span>
+    </p>
+
+    {{text |safe}}
+
+{% endblock %}

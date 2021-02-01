@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1 style='padding-left: 20px;'>Create A New Page</h1>
+    <form action="{% url 'wikipedia:create' %}" method="post" style='margin: 20px;'>
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td><input class="btn btn-primary" type="submit" value="Save"></td>
+            </tr>
+        </table>
+    </form>
+
+{% endblock %}
+
